@@ -73,3 +73,36 @@ enum SchoolDetail {
 
 let yourMiddleSchoolName = SchoolDetail.middle(name: "김시종 중학교")
 print(yourMiddleSchoolName)
+
+
+// ** for 반복문 **
+
+// range
+// 0...5
+// 0,1,2,3,4,5
+
+// 0..<5
+// 0,1,2,3,4
+
+for index in 0..<5 {
+    print("호호 index: \(index)")
+}
+
+//반복을 뜻하는 iterate 때문에 i로 쓰는게 일반적
+
+for index in 0...5 where index % 2 == 0 {
+    print("호호 짝수 index: \(index)")
+}
+
+
+var randomInts: [Int] = []
+// var randomInts: [Int] = [Int]()
+
+for _ in 0..<25 {
+    let randomnumber = Int.random(in: 0...100)
+    randomInts.append(randomnumber)
+}
+// i 는 사용하지 않으면 _ 로 쓰면 된다.
+
+print(randomInts)
+
