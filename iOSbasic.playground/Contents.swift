@@ -1,5 +1,7 @@
 import UIKit
 
+
+//  조건문
 var isDarkMode : Bool = true
 
 if isDarkMode == true {
