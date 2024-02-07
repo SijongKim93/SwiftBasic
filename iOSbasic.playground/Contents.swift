@@ -40,3 +40,36 @@ for item in myArray where item % 2 != 0 {
 // item을 2로 나눴을때 나머지가 0이 아닌 수(홀수)만 출력
 
 
+// ** enum **
+// 경우(타입)을 나눈다.
+
+enum School {
+    case elementary
+    case middle
+    case high
+}
+// 위 식과 같은 표현
+// enum School {
+//    case elementary, middle, high
+// }
+
+
+let yourSchool = School.high
+print("yourSchool: \(yourSchool)")
+
+enum Grade: Int {
+    case first = 1
+    case second = 2
+}
+
+let yourGrade = Grade.second
+print("yourGrade : \(yourGrade.rawValue)")
+
+enum SchoolDetail {
+    case elementary(name: String)
+    case middle(name: String)
+    case high(name: String)
+}
+
+let yourMiddleSchoolName = SchoolDetail.middle(name: "김시종 중학교")
+print(yourMiddleSchoolName)
