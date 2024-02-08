@@ -182,3 +182,23 @@ myFuntionSecond(with: "호롤로롤")
 func myFuntionThird(_ name: String) -> String {
     return "안녕하세요? \(name) 입니다."
 }
+
+//Strings and Characters
+
+let s = "Hello, World"
+
+// swift 에는 두가지 String Type 이 있다.
+
+var nsstr: NSString = "str"
+let swiftstr: String = nsstr as String
+nsstr = swiftstr as NSString
+
+// Mutability
+var str = "Hello"
+str.append("Swift")
+// 문자의 가변성은 let , var 로 결정되며 let은 수정할 수 없다.
+
+
+// Character Type
+let c: Character = "C"
+// 문자 타입으로 처리하고 싶다면 반드시 캐릭터 타입으로 설정해야한다.
