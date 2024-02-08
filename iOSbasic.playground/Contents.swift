@@ -160,3 +160,25 @@ var myAge = 0 {
 
 myAge = 10
 myAge = 20
+
+
+// 함수, 메소드 정의
+func myFuntion(name: String) -> String {
+    return "안녕하세요? \(name) 입니다."
+}
+
+// 함수, 메소드를 호출한다.
+myFuntion(name: "김시종")
+
+
+// 함수, 메소드 정의 2
+func myFuntionSecond(with name: String) -> String {
+    return "안녕하세요? \(name) 입니다."
+}
+
+myFuntionSecond(with: "호롤로롤")
+
+
+func myFuntionThird(_ name: String) -> String {
+    return "안녕하세요? \(name) 입니다."
+}
