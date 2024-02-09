@@ -253,3 +253,61 @@ let multiline = #"""
 String
 Literal
 """#
+
+// String Indices
+
+let str = "Swift"
+str.startIndex
+
+let firstCh = str[str.startIndex]
+print(firstCh)
+
+let lastCharIndex = str.index(before: str.endIndex)   //endIndex 는 마지막 문자의 다음 문자
+let lastCh = str[lastCharIndex]
+print(lastCh) 
+
+
+//String Basics
+
+var str = "Hello, Swift String"
+var emptyStr = ""
+emptyStr = String()
+
+let a = String(true)
+let b = String(12)
+let c = String(12.34)
+let d = String(str)
+
+let hex = String(123, radix: 16)
+
+let repeatStr = String(repeating: "👍", count: 7)
+
+let clap = "\u{1f44f}"
+
+let e = "\(a) \(b)"
+let f = a + b
+
+str += "!!"
+
+str.count
+str.count == 0
+str.isEmpty
+
+str == "Apple"
+"apple" != "Apple"
+
+"apple" < "Apple"
+// 아스키 코드
+
+str.lowercased()
+str.uppercased()
+str.capitalized
+
+for char in "Hello" {
+    print(char)
+}
+
+let num = "1234567890"
+num.randomElement()
+
+num.shuffled()
