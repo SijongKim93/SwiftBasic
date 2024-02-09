@@ -202,3 +202,54 @@ str.append("Swift")
 // Character Type
 let c: Character = "C"
 // 문자 타입으로 처리하고 싶다면 반드시 캐릭터 타입으로 설정해야한다.
+
+var str = "12.34KB"
+
+let size = 56.78
+str = String(size) + "KB"
+str = "\(size)KB"
+
+// 플레이스 홀더를 활용하여 간결한 문장을 만들 수 있다.
+// 타입 컨버젼이 별도로 필요하지 않고 편리함
+
+// 다만 포멧을 세부적으로 정할 순 없다.
+
+//Format Specifier
+
+String(format: "%.5fKB", size)
+String(format: "Hello, %@", "Swift")
+String(format: "%d", 12)
+String(format: "%.3f", 12.34)
+
+String(format: "[%d]", 123)
+String(format: "[%10d]", 123)
+String(format: "[%-10d]", 123)
+String(format: "[%-10d]%%", 123)
+
+//Escape Sequence
+str = "\\"
+// \ 하나만 출력됨
+
+print("A\tB")
+// t 는 탭이므로 문자열에 탭이 추가됨
+print("A\nB")
+// n 은 줄바꿈으로 문자열이 줄바꿈됨
+print("\"Hello\" he said.")
+
+"""
+\"Hello\" he said.
+"""
+
+// Extended String Delimeters
+#"\"Hello\" he said."#
+// #은 \와 " 를 문자그대로 출력함
+// #의 갯수를 맞춰 사용해야한다.
+
+let value = 123
+print(#"The value is \#(value)"#)
+
+let multiline = #"""
+"Multiline"
+String
+Literal
+"""#
