@@ -349,3 +349,37 @@ let str3 = str2.lowercased()
 
 var common = str.commonPrefix(with: str2)
 common = str.commonPrefix(with: str3, options: [.caseInsensitive])
+
+// Collection
+// ** Array , Dictionary , Set
+
+// 배열의 특징
+ 
+// Array
+
+let numArray = [1, 2, 3]
+// [Int] 와 같이 [] 로 감싸져 있으면 배열
+let multiArray = [[1, 2, 3], [1, 2, 3]]
+
+// Array Type
+
+let strArray: Array<String>
+let strArray2: [String]
+// 둘은 같은 문법이므로 선택해서 사용하면 되나 , 2번째 단축문법을 더 많이 사용함
+
+let nums = [1, 2, 3]
+let emptyArray: [Int] = []
+let emptyArray2 = Array<Int>()
+let emptyArray3 = [Int]()
+// 배열은 타입이 매우 중요한데 설정하지 않고 빈공간으로 남겨두면 컴파일 에러가 발생한다.
+// 그렇기 때문에 타입을 판단할 수 있는 값이 없는 경우, 타입을 꼭 설정해줘야한다. (위 3가지 방법 중 한가지를 선택해 사용할 수 있다.)
+
+let zeroArray = [Int](repeating: 0, count: 10)
+// repeating = 채울값 , count = 채울 갯수
+// 0으로 채울때
+
+// 배열의 갯수
+nums.count
+nums.count == 0
+nums.isEmpty
+emptyArray.isEmpty
