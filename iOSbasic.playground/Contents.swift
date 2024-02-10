@@ -311,3 +311,41 @@ let num = "1234567890"
 num.randomElement()
 
 num.shuffled()
+
+//Comparing Strings
+
+let bigA = "Apple"
+let smallA = "apple"
+let b = "Banana"
+
+bigA == smallA
+bigA != smallA
+
+bigA < smallA
+
+("A" as Character).asciiValue
+("a" as Character).asciiValue
+
+bigA < b
+
+bigA.compare(smallA) == .orderedSame
+bigA.caseInsensitiveCompare(smallA) == .orderedSame
+
+bigA.compare(smallA, options: [.caseInsensitive])
+== .orderedSame
+
+// Finding Substrings
+let str = "Hello, Swift"
+str.contains("Swift")
+// .contains("Swift") 는 str 안에 "Swift" 가 포함되어있는지 Bool 값으로 표현해준다.
+
+str.lowercased().contains("swift")
+// str 안에 String값을 모두 소문자로 변경한 후 "swift"가 있는지 확인하는 방법이다. -> true
+
+str.range(of: "swift", options: [.caseInsensitive])
+
+let str2 = "Hello, Programming"
+let str3 = str2.lowercased()
+
+var common = str.commonPrefix(with: str2)
+common = str.commonPrefix(with: str3, options: [.caseInsensitive])
