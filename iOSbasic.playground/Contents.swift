@@ -383,3 +383,42 @@ nums.count
 nums.count == 0
 nums.isEmpty
 emptyArray.isEmpty
+
+// 요소에 접근하는 법
+let fruits = ["Apple", "Banana", "Melon"]
+fruits[0]
+fruits[2]
+fruits[0...1]
+
+// 잘못된 인덱스를 전달하면 오류가 발생
+
+fruits[fruits.startIndex]
+fruits[fruits.index(before: fruits.endIndex)]
+// 인덱스를 숫자로 불러올 경우 인덱스의 갯수를 파악 하지 못해 오류가 발생 할 수 있다.
+// 위와 같이 명령어를 사용하여 더욱 안전하게 불러올 수 있다.
+// 마지막 인덱스의 경우 .endIndex 는 마지막의 다음 인덱스를 불러오는 명령어로 오류가 발생한다.
+// 그렇기 때문에 .endIndex의 이전을 불러오는 .index(before: fruits.endIndex) 로 마지막 인덱스를 호출해야한다.
+
+fruits.first
+fruits.last
+// 가장 쉽고 안전하게 인덱스를 불러올 수 있는 방법
+
+
+let list = ["A", "B", "C", "D", "E"]
+list[0...2]
+list[2...]
+list[...2]
+
+list.prefix(3)
+// A , B , C
+list.prefix(30)
+// 최대 갯수가 30이기 때문에 그전까지는 모두 출력
+list.prefix(upTo: 3)
+list.prefix(through: 3)
+// through 는 인덱스까지 포함
+
+let r = list.prefix { $0 != "C" }
+r
+
+list.suffix(3)
+list.suffix(from: 3)
