@@ -422,3 +422,9 @@ r
 
 list.suffix(3)
 list.suffix(from: 3)
+
+상수와 변수 출력 (Printing Constants and Variables)
+print(_:separator:terminator:) 함수로 상수 또는 변수의 현재 값을 출력할 수 있습니다:
+print(friendlyWelcome)
+// Prints "Bonjour!"
+print(_:separator:terminator:) 함수는 하나 또는 그 이상의 값을 적절하게 출력하는 전역 함수입니다. 예를 들어 Xcode에서 print(_:separator:terminator:) 함수는 Xcode "콘솔 (console)" 창에 결과를 출력합니다. separator 와 terminator 파라미터는 기본 값을 가지고 있으므로 함수를 호출할 때 생략할 수 있습니다. 
