@@ -435,3 +435,22 @@ alphabet.insert("Z", at: 3)
 // .insert("", at: Int) 특정한 자리에 추가할 수 있다. at == 위치
 alphabet.insert(contentsOf: ["a", "b", "c"], at: 0)
 // 배열을 원하는 위치에 추가할 수 있다.
+
+// 배열 비교
+// Comparing Arrays
+
+
+let a = ["A", "B", "C"]
+let b = ["a", "b", "c"]
+
+a == b
+a != b
+
+a.elementsEqual(b)
+
+// Finding Elements
+
+let randomNumbers = [1, 2, 3, 7, 1, 3, 5]
+
+randomNumbers.min()
+randomNumbers.max()
