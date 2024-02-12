@@ -423,8 +423,15 @@ r
 list.suffix(3)
 list.suffix(from: 3)
 
-상수와 변수 출력 (Printing Constants and Variables)
-print(_:separator:terminator:) 함수로 상수 또는 변수의 현재 값을 출력할 수 있습니다:
-print(friendlyWelcome)
-// Prints "Bonjour!"
-print(_:separator:terminator:) 함수는 하나 또는 그 이상의 값을 적절하게 출력하는 전역 함수입니다. 예를 들어 Xcode에서 print(_:separator:terminator:) 함수는 Xcode "콘솔 (console)" 창에 결과를 출력합니다. separator 와 terminator 파라미터는 기본 값을 가지고 있으므로 함수를 호출할 때 생략할 수 있습니다. 
+// 배열에 새로운 요소 추가하기
+// Adding Elements
+
+var alphabet = ["A", "B", "C"]
+alphabet.append("D")
+// .append("--") --을 새롭게 추가할 수 있다.
+alphabet.append(contentsOf: ["F", "G"])
+// .append(contentsOf: ["F", "G"]) 여려가지를 추가할 수 있다.
+alphabet.insert("Z", at: 3)
+// .insert("", at: Int) 특정한 자리에 추가할 수 있다. at == 위치
+alphabet.insert(contentsOf: ["a", "b", "c"], at: 0)
+// 배열을 원하는 위치에 추가할 수 있다.
