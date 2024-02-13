@@ -1,0 +1,39 @@
+/*Closure
+ 함수가 1등 시민, 어디든 갈 수 있다.
+ 다른 값의 매개변수로 갈 수 있다.
+ 
+ String , Double , Int - 기본 타입들
+ Array, Dictionary, Set - 컬렉션 타입들
+ UIView, UILabel, UITableView - CocoaTouch 클래스 타입들
+ 
+ () -> Void, (Int, Int) -> Int - 함수 타입들 */
+
+func addVAT(source:Double) -> Double {
+    return source * 1.1
+}
+
+func couponDiscount(source:Double) -> Double {
+    return source * 0.9
+}
+
+func finalPrice(source:Double, additional:(Double) -> Double) -> Double {
+    let price = additional(source)
+    return price
+}
+
+let transction1 = finalPrice(source: 38.5, additional: addVAT)
+  
+func makeAdder (x: Int) -> (Int) -> Int {
+    func adder(a: Int) -> Int {
+        return x + a
+    }
+    return adder
+}
+  
+let add5 = makeAdder(x: 5)
+let add10 = makeAdder(x: 10)
+
+print(add5(2))
+print(add10(2))
+
+print(makeAdder(x: 5)(2))
