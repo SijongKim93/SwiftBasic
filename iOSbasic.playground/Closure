@@ -37,3 +37,36 @@ print(add5(2))
 print(add10(2))
 
 print(makeAdder(x: 5)(2))
+
+/*
+ 클로저란
+ 사용자의 코드 안에서 { } 로 구분되어 있는 코드의 블럭이며, 일급 객체의 역할을 할 수 있다.
+ 일급 객체는 전달 인자 , 변수 / 상수 , 함수의 반환 값 등 여러방면에서 사용 할 수 있다.
+ 함수는 클로저의 한 형태로 이름이 있는 클로저를 함수라고 한다.
+ */
+
+
+let reverseNames = names.sorted(by: {(s1: String, s2: String) ->
+Bool in return s1 > s2})
+
+// 하단은 축약 식
+
+/* sorted(by:) 의 경우는 이미 (String, String) -> Bool 타입의 인자가 들어오는 것이 정해져 있기 떄문에
+타입을 생략하여 사용 할 수 있다. */
+
+let reverseNames = name.sorted(by: { s1, s2 in return s1 > s2})
+
+// 인자 값을 축약해서 사용할 수 있다. ($0 부터 순서대로 사용)
+
+let reversedNames = names.sorted(by: { $0 > $1 })
+
+// 연산자를 사용할 수 있는 타입의 경우 연산자만 사용할 수 있다.
+
+let reversedNames = names.sorted(by: > )
+
+// 인자로 클로저 넣기가 길다면 후행 클로저를 사용하여 함수 뒤에 표현할 수 있다.
+// 또한, 마지막 인자가 클로저이고, 후행 클로저를 사용하면 ( ) 를 생략할 수 있다.
+
+let reversedNames = names.sorted { $0 > $1 }
+let reversedNames = names.sorted { (s1: String, s2: String) -> Bool
+in return s1 > s2 }
