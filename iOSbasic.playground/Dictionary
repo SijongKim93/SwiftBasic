@@ -1,0 +1,48 @@
+// Dictionary(사전)
+/* 키와 값을 하나의 값
+정렬되지 않은 값
+키의 타입이 같아야하고 값의 타입도 같아야한다 */
+
+var dict = ["A": "Apple", "B": "Banana"]
+dict = [:]
+
+let dict1: Dictionary<String, Int>  //정식문법
+let dict2: [String: Int]   //단축문법
+
+
+// 딕셔너리 생성
+dict = [:]
+dict = [String: String]()
+dict = Dictionary<String, String>()
+
+
+let words = ["A": "Apple", "B": "Banana", "C": "City"]
+
+words.count
+words.isEmpty
+
+
+// [] 안은 키만 넣을 수 있다. 없다면 nil로 표현
+words["A"]
+words["Apple"] // nil
+
+let a = words["E"]
+let b = words["E", default: "Empty"] //E 가 없을때 출력될 String
+
+for k in words.keys {
+    print(k)
+}
+// 항상 다른 값으로 출력된다. 딕셔너리는 정렬되어 있지 않은 컬렉션 이기 떄문
+
+for v in words.values {
+    print(v)
+}
+// 항상 다른 값으로 출력
+// 같은 순서로 출력되려면 .sorted() 를 사용해야한다.
+
+for k in words.keys.sorted() {
+    print(k)
+}
+
+let keys = Array(words.keys)
+let value = Array(words.values)
