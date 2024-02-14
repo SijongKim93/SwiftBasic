@@ -46,3 +46,48 @@ for k in words.keys.sorted() {
 
 let keys = Array(words.keys)
 let value = Array(words.values)
+
+// 딕셔너리 값 추가
+var mutableDict = [String: String]()
+
+mutableDict["A"] = "Apple"
+mutableDict["B"] = "Banana"
+
+mutableDict.count
+mutableDict
+
+mutableDict.updateValue("City", forKey: "C")
+mutableDict
+
+mutableDict.updateValue("Circle", forKey: "C")
+mutableDict
+
+// 딕셔너리 값 제거
+
+mutableDict
+mutableDict["B"] = nil
+mutableDict
+
+mutableDict["Z"] = nil
+
+mutableDict.removeValue(forKey: "A")
+mutableDict.removeValue(forKey: "A")
+ 
+mutableDict.removeAll()
+
+// 딕셔너리 값 비교
+
+let first = ["A": "Apple", "B": "Banana", "C": "City"]
+let second = ["A": "Apple", "B": "Banana", "C": "City"]
+
+first == second
+
+// 딕셔너리 값 검색
+
+let find: ((key: String, value: String)) -> Bool = {
+    $0.key == "B" || $0.value.contains("i")
+}
+
+first.contains(where: find)
+
+first.first(where: find)
