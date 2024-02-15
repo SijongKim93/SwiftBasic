@@ -1,0 +1,21 @@
+// enum 이란 , 열거형으로써 서로 연관된 특성을 갖는 형태끼리 집합을 구성할 수 있다.
+// 코드를 간결하고 가독성 있게 작성할 수 있다.
+// 또한, String형식은 heap에 저장되지만, enum은 값의 형태로 Stack 으로 성능면에서 향상된다.
+
+enum Asia {
+    case korea
+    case japan
+    case china
+}
+
+// 각 나라별로 손 쉽게 집합 형식으로 묶어줄 수 있다.
+
+enum Asia: String {
+    case korea = "대한민국"
+    case japan = "일본"
+    case china = "중국"
+}
+
+var korea = Asia.korea.rawValue
+
+// enum 은 이런식으로 rawValue 를 사용하여 값을 표현 할 수도 있다.
