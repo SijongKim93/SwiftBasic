@@ -19,3 +19,9 @@ enum Asia: String {
 var korea = Asia.korea.rawValue
 
 // enum 은 이런식으로 rawValue 를 사용하여 값을 표현 할 수도 있다.
+
+Asia(rawValue: "대한민국")   //출력값 korea
+Asia(rawValue: "일본")     // 출력값 japan
+Asia(rawValue: "호주")     // 출력값 nil 
+
+// rawValue를 파라미터로 가저와 출력하면 상위값을 출력하며, 없는 값을 호출하면 nil 을 호출한다.
