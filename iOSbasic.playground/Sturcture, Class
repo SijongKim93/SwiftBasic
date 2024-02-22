@@ -41,3 +41,64 @@ struct Sport {
     var name: String
 }
 Sport이름을 문자열로 저장하는 구조체를 만들었습니다. 구조체 내부의 변수를 프로퍼티라고 하므로 속성이 하나인 구조체입니다. 이제 인스턴스를 만들고 사용할 수 있습니다.
+
+---
+
+Struture 문법
+
+struct Person {
+    var name: String
+    var age: Int
+    
+    func speak() {
+        print("Hello")
+    }
+    
+}
+
+let p = Person(name: "Steve", age: 50)
+
+let name = "Paul"
+
+---
+
+ Class 문법
+
+class Person {
+    var name: String = "Steve"
+    var age: Int = 50
+
+}
+
+let p = Person()
+p.name
+
+
+let str = "123"
+let num = Int(str)
+
+
+class Position {
+    var x: Double
+    var y: Double
+    
+    init() {
+        x = 0.0
+        y = 0.0
+    }
+    
+    init(value: Double) {
+        x = value
+        y = value
+    }
+}
+
+let a = Position()
+a.x
+a.y
+
+let b = Position(value: 100)
+b.x
+b.y
+
+Position.init()
