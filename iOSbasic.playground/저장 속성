@@ -1,0 +1,72 @@
+>변수 저장 속성
+
+클래스나 구조체에 값을 저장 하는데 사용하는 속성이며,
+
+이러한 속성은 해당 클래스 혹은 구조체의 인스턴스에 속하며, 인스턴스가 생성될 때마다 메모리에 할당된다.
+
+변수 저장 속성은 ‘var’ 를 사용
+
+```
+class Person {
+
+	var name: String
+	var age: Int
+
+	init(name: String, age: Int) {
+		self.name = name
+		self.age = age
+
+	}
+
+}
+
+let person = Person(name: “John”, age: 30)
+
+person.age = 35 // 나이를 변경할 수 있다. (30 → 35)
+```
+
+> 상수 저장 속성
+
+클래스 또는 구조체 내에서 값을 저장하는데 사용 되는 속성이며, 한번 할당되면 그 값을 변경 할 수 없는 속성이다.
+
+이 속성은 초기화 후에는 변경할 수 없으므로, 값이 한번 할당되면 항상 동일한 값을 유지한다.
+
+상수 저장 속성은 ‘let’ 을 사용 하여 선언한다.
+
+```
+struct Rectangle {
+	let width: Double
+	let height: Double
+
+	init(width: Double, height: Double) {
+		self.width = width
+		self.height = height
+	}
+}
+
+let rectangle = Rectangle(width: 10, height: 20)
+// rectangle.width = 15 // 에러: 상수 속성이므로 값을 변경할 수 없음
+```
+
+> 지연 저장 속성
+
+인스턴스가 처음으로 사용될 때까지 초기화되지 않고, 처음으로 접근될 때 초기화 되는 속성이다.
+
+변수 , 상수 저장 속성과 마찬가지로 클래스 및 구조체에 사용 가능하며, 열거형(Enum)에서도 사용이 가능하다.
+
+처음으로 접근될 때 까지 값을 초기화 하지 않고 실제로 속성이 사용되는 시점에 초기화를 진행
+
+초기화가 비용이 많이 드는 작업이거나, 초기화 시점이 지연될 필요가 있는 상황에서 유용하게 사용된다.
+
+지연 저장 속성은 ‘ lazy’ 키워드를 사용하여 선언
+
+```
+class FileReader {
+	lazy var fileContent: String = {
+		return "파일에서 읽어온 내용"
+	}()
+}
+
+let reader = FileReader()
+let content = reader.fileContent
+```
