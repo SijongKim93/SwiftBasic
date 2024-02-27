@@ -1,0 +1,26 @@
+Instance Method
+
+클래스 , 구조체 , 열거형 내 선언되는 함수이며, 이러한 메서드는 특정한 인스턴스에 속하는 동작이나 기능을 표현한다.
+해당 인스턴스의 속성에 엑세스 하거나 상태를 변경하는데 사용
+
+특정 인스턴스에 속해있음 : 이 메서드를 호출할 땐 해당 인스턴스의 이름을 사용하여 호출
+인스턴스 속성에 접근 : 인스턴스 메서드는 동일한 인스턴스 내 속성에 접근할 수 있다. (self 키워드를 활용하여)
+인스턴스 상태 변경 : 인스턴스 메서드는 해당 인스턴스의 상태를 변경할 수 있다.
+
+class MyClass {
+    var property: Int
+    init(property: Int) {
+        self.property = property
+    }
+    
+    func instanceMethod() {
+        //인스턴스 메서드의 구현
+        // self 를 활용하여 현재 인스턴스 속성에 접근
+        self.property += 1
+        
+    }
+}
+
+let instance = MyClass(property: 10)
+instance.instanceMethod()
+print(instance.property)  // 출력값 11
