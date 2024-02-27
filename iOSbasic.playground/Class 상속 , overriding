@@ -1,0 +1,75 @@
+상속
+
+부모 클래스의 특성과 동작을 자식 클래스가 물려받아 확장하고 수정할 수 있다.
+이를 통해 코드의 재사용성과 구조화에 유용하다.
+
+class Figure {
+    var name = "Unknown"
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func draw() {
+        print("draw \(name)")
+    }
+}
+
+
+class Circle: Figure {
+    var radius = 0.0
+}
+
+
+let c = Circle(name: "Circle")
+c.radius
+c.name
+c.draw()
+
+class Rectangle: Figure {
+    var width = 0.0
+    var height = 0.0
+}
+
+class Square: Rectangle {
+    
+}
+위 예제에서 'Circle' 은 'Figure'를 상속 받았다. 따라서 'Circle' 클래스는 'Figure' 의 속성과 매서드를 자동으로 포함하게 된다.
+
+상속을 통해 코드를 재사용하고 확장함으로써 유지보수가 쉽고 일관된 코드를 작성할 수 있다.
+또한, 클래스가 상속되는 것을 막고 싶다면 'final' 키워드를 사용하여 상속을 막을 수 있다.
+
+Overiding
+
+오버라이딩은 부모 클래스의 메서드, 프로퍼티, 서브스크립트 등 자식 클래스에서 재정의하는 것을 말한다.
+이를 통해 자식 클래스는 부모 클래스의 동작을 변경하거나 확장할 수 있다.
+
+final 키워드로 선언되지 않은 class만 가능하다.
+오버라이드 하려는 이름과 매개변수 타입은 동일해야한다.
+'override' 라는 키워드를 사용한다.
+
+class Rectangle: Figure {
+    var width = 0.0
+    var height = 0.0
+}
+
+
+class Vehicle {
+    func makeSound() {
+        print("Beep beep!")
+    }
+}
+
+class Car: Vehicle {
+    override func makeSound() {
+        print("Honk Honk!")
+    }
+}
+
+
+let myVehicle = Vehicle()
+let myCar = Car()
+
+myVehicle.makeSound()
+myCar.makeSound()
+오버라이딩은 클래스의 다형성을 통해 유연하고 확장 가능한 코드를 작성하는데 도움이 된다.
