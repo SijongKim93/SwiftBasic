@@ -1,0 +1,69 @@
+Initializer
+
+클래스, 구조체, 열거형 등 인스턴스를 생성하고 초기화 하는 메서드
+이니셜라이저는 인스턴스의 모든 속성을 초기화 하여 사용 가능한 상태로 만든다.
+초기화 할때 필요한 값을 전달하고 초기화 과정에서 다양한 작업을 수행할 수 있다.
+```
+class Position {
+    var x: Double
+    var y: Double
+    
+    init(x: Double, y: Double) {
+        self.x = x
+        self.y = y
+    }
+    
+    // Convenience Initializer
+    convenience init(x: Double) {
+        self.init(x: x, y: 0.0)
+    }
+}
+```
+
+Convenience Initializer 는 특정한 인스턴스에 값을 넣고 뺄 수 있도록 편리하게 구성 가능하다.
+
+> 슈퍼클래스 이니셜라이저 호출
+
+서브클래스에서 이니셜라이저를 구현할 때 슈퍼클래스의 이니셜 라이저를 호출해야한다.
+상속받은 속성을 초기화 하고 슈퍼클래스의 초기화 과정을 수행하기 위해서 이다.
+슈퍼 클래스 이니셜라이저는 ' super.init() ' 으로 호출한다.
+
+>오버라이딩
+
+서브 클래스에서 슈퍼 플래스의 이니셜라이저를 오버라이드 할 수 있다.
+' override ' 선언을 사용하며 호출하고 오버라이드 된 이니셜 라이저는 슈퍼클래서의 이니셜 라이저를 호출 하고 초기화 할 수 있다.
+
+```
+class Vehicle {    //슈퍼클래스
+    
+    var numberOfWheels: Int
+    
+    init(numberOfWheels: Int) {
+        self.numberOfWheels = numberOfWheels
+    }
+    
+}
+
+
+class Car: Vehicle {
+    
+    var color: String
+    
+    init(numberOfWheels: Int, color: String) {    //서브클래스에서 이니셜라이저를 구현할 땐 슈퍼클래스의 이니셜라이저를 호출해야한다.
+        self.color = color
+        super.init(numberOfWheels: numberOfWheels) // 슈퍼클래스의 이니셜라이저 호출
+        
+    }
+    
+    override init(numberOfWheels: Int) {   //슈퍼클래스의 이니셜라이저를 오버라이드 할때는 override 선언을 사용한다.
+        self.color = "Black"
+        super.init(numberOfWheels: numberOfWheels)
+    }
+}
+
+```
+
+위 코드 내 Car 클래스는 Vehicle 클래스를 상속 받았으며, Car 클래스 내 이니셜라이저를 구현할 땐 
+'super.init()' 을 호출하여 슈퍼클래스의 init을 먼저 호출 해야한다.
+
+Car 클래스에서 슈퍼클래스의 이셜라이저를 오버라이드 할때도 ' override' 를 사용 한다.
