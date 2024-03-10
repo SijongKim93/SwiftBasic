@@ -1,0 +1,30 @@
+### 프로퍼티 옵저버
+
+프로퍼티 옵저버는 프로퍼티의 값이 변경될 때 특정한 동작을 수행할 수 있게 해주는 기능이다.
+
+프로퍼티의 값이 변경되기 전 (willSet) 과 변경된 후 (didSet) 에 호출됩니다. 이를 통해 값의 변화를 감지하고 추가 작업을 수행할 수 있다.
+
+### didSet
+
+프로퍼티의 값이 변경된 후에 호출되는 옵저버, 이 옵저버는 이전 값과 새로운 값 사이의 변화를 감지하거나, 값에 따른 추가적인 동작을 수행할 수 있다. 매개변수로는 변경되기 전의 값이 전달된다.
+
+### willSet
+
+프로퍼티의 값이 변경되기 전에 호출되는 옵저버, 이 옵저버는 새로운 값이 어떤 것인지 파악하거나, 변경 전 상태를 저장하는 등 작업을 수행할 수 있다. 매개변수로는 변경될 값이 전달된다.
+
+class StepCounter {
+    var totalSteps: Int = 0 {
+        willSet(newTotalSteps) {
+            print("새로운 값을 입력 \(newTotalSteps)")
+        }
+        didSet {
+            if totalSteps > oldValue {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+stepCounter.totalSteps = 360
